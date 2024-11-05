@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
             Debug.Log("Level Complete!!");
             GameWonPanel.SetActive(true);
             isGameOver = true;
+            rigidbody2d.velocity = Vector2.zero;
         }
 
         else if (other.tag == "Enemy")
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
             Debug.Log("Level Lost!!");
             GameLostPanel.SetActive(true);
             isGameOver = true;
+            rigidbody2d.velocity = Vector2.zero;
         }
     }
     public void RestartGame()
